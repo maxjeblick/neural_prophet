@@ -4,7 +4,7 @@ log = logging.getLogger("NP")
 log.setLevel("INFO")
 # Create handlers
 c_handler = logging.StreamHandler()
-f_handler = logging.FileHandler("logs.log", "w+")
+#f_handler = logging.FileHandler("logs.log", "w+")
 # c_handler.setLevel("WARNING")
 # f_handler.setLevel("INFO")
 # Create formatters and add it to handlers
@@ -14,12 +14,12 @@ c_handler.setFormatter(c_format)
 f_handler.setFormatter(f_format)
 # Add handlers to the logger
 log.addHandler(c_handler)
-log.addHandler(f_handler)
+#log.addHandler(f_handler)
 
 logging.captureWarnings(True)
 warnings_log = logging.getLogger("py.warnings")
 warnings_log.addHandler(c_handler)
-warnings_log.addHandler(f_handler)
+#warnings_log.addHandler(f_handler)
 
 from .forecaster import NeuralProphet
 from .utils import set_random_seed, set_log_level
